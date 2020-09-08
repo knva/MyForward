@@ -37,3 +37,4 @@ jobs:
       uses: actions/upload-artifact@v2.1.4
       with:
           name: myForward
+          path: /home/runner/work/MyForward/MyForward
