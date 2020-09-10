@@ -107,7 +107,7 @@ func mutualCopyIO(conn0, conn1 net.Conn) {
 }
 
 func dial(cc chan net.Conn, targetAddress string) {
-	for true {
+	for {
 		conn, err := net.Dial("tcp", targetAddress)
 		if err != nil {
 			fmt.Printf("[x] connect [%s] error [%s].\n", targetAddress, err.Error())
@@ -122,7 +122,7 @@ func dial(cc chan net.Conn, targetAddress string) {
 }
 
 func accept(cc chan net.Conn, ln net.Listener) {
-	for true {
+	for {
 		fmt.Printf("[#] waiting for client to connect [%s %s]\n", ln.Addr().Network(), ln.Addr().String())
 		c, err := ln.Accept()
 		if err != nil {
